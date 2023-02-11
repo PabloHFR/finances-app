@@ -1,11 +1,17 @@
 import { Container, Content, Title } from "./styles";
 
-export function Header() {
+interface HeaderProps {
+  onOpenTransactionModal: () => void;
+}
+
+export function Header({ onOpenTransactionModal }: HeaderProps) {
   return (
     <Container>
       <Content>
         <Title>Finance App</Title>
-        <button type="button">Nova transação</button>
+        <button onClick={onOpenTransactionModal} type="button">
+          Nova transação
+        </button>
       </Content>
     </Container>
   );
