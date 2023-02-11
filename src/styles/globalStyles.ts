@@ -91,4 +91,16 @@ export const GlobalStyle = createGlobalStyle`
       filter: brightness(0.9);
     }
   }
+
+  .material-symbols-outlined {
+    font-size: 2.5rem;
+
+    &.green-icon {
+      color: var(--green);
+    }
+
+    &.red-icon {
+      color: var(--red);
+    }
+  }
 `;

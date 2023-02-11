@@ -1,5 +1,5 @@
 import Modal from "react-modal";
-import { Container } from "./styles";
+import { Container, TransactionTypeContainer } from "./styles";
 
 interface TransactionModalProps {
   isOpen: boolean;
@@ -29,6 +29,23 @@ export function TransactionModal({
 
         <input placeholder="Título" type="text" />
         <input placeholder="Valor" type="number" />
+
+        <TransactionTypeContainer>
+          <button type="button">
+            <span className="green-icon material-symbols-outlined">
+              arrow_circle_up
+            </span>
+            <span className="transaction-type">Entrada</span>
+          </button>
+
+          <button type="button">
+            <span className="red-icon material-symbols-outlined">
+              arrow_circle_down
+            </span>
+            <span className="transaction-type">Entrada</span>
+          </button>
+        </TransactionTypeContainer>
+
         <input placeholder="Categoria" type="text" />
         <button type="submit">Cadastrar</button>
       </Container>

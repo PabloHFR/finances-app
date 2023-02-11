@@ -30,17 +30,5 @@ export const Container = styled.div`
       background-color: var(--green);
       color: #fff;
     }
-
-    span {
-      font-size: 2.5rem;
-
-      &.green-icon {
-        color: var(--green);
-      }
-
-      &.red-icon {
-        color: var(--red);
-      }
-    }
   }
 `;
