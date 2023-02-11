@@ -17,6 +17,13 @@ export function TransactionModal({
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
+      <button
+        type="button"
+        onClick={onRequestClose}
+        className="react-modal-close"
+      >
+        <span className="material-symbols-outlined">close</span>
+      </button>
       <Container>
         <h2>Cadastrar transação</h2>
 
