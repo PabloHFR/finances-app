@@ -1,5 +1,6 @@
+import { useState } from "react";
 import Modal from "react-modal";
-import { Container, TransactionTypeContainer } from "./styles";
+import { Container, TransactionTypeContainer, RadioBox } from "./styles";
 
 interface TransactionModalProps {
   isOpen: boolean;
@@ -10,6 +11,8 @@ export function TransactionModal({
   isOpen,
   onRequestClose,
 }: TransactionModalProps) {
+  const [type, setType] = useState("");
+
   return (
     <Modal
       isOpen={isOpen}
@@ -31,19 +34,33 @@ export function TransactionModal({
         <input placeholder="Valor" type="number" />
 
         <TransactionTypeContainer>
-          <button type="button">
+          <RadioBox
+            type="button"
+            onClick={() => {
+              setType("deposit");
+            }}
+            isActive={type === "deposit"}
+            activeColor="green"
+          >
             <span className="green-icon material-symbols-outlined">
               arrow_circle_up
             </span>
             <span className="transaction-type">Entrada</span>
-          </button>
+          </RadioBox>
 
-          <button type="button">
+          <RadioBox
+            type="button"
+            onClick={() => {
+              setType("withdraw");
+            }}
+            isActive={type === "withdraw"}
+            activeColor="red"
+          >
             <span className="red-icon material-symbols-outlined">
               arrow_circle_down
             </span>
             <span className="transaction-type">Entrada</span>
-          </button>
+          </RadioBox>
         </TransactionTypeContainer>
 
         <input placeholder="Categoria" type="text" />
