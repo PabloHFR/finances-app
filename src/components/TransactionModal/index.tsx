@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react";
 import Modal from "react-modal";
+import { api } from "../../services/api";
 import { Container, TransactionTypeContainer, RadioBox } from "./styles";
 
 interface TransactionModalProps {
@@ -25,6 +26,8 @@ export function TransactionModal({
       category,
       type,
     };
+
+    api.post("/transactions", data);
   }
 
   return (
